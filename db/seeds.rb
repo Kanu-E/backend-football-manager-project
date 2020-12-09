@@ -6,3 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
+Player.destroy_all 
+Appearance.destroy_all 
+Game.destroy_all 
+
+Game.create(name: "vs ABC United")
+
+15.times do
+Player.create(name: Faker::Name.name, number: Faker::Number.unique.between(from: 1, to: 20))
+end
