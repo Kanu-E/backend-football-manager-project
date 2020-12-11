@@ -1,4 +1,4 @@
-class Appearance < ApplicationRecord
+class Roster < ApplicationRecord
   belongs_to :player
   belongs_to :game
 end

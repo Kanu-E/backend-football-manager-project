@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_12_09_173611) do
 
-  create_table "appearances", force: :cascade do |t|
-    t.integer "player_id", null: false
-    t.integer "game_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_appearances_on_game_id"
-    t.index ["player_id"], name: "index_appearances_on_player_id"
-  end
-
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -34,6 +25,15 @@ ActiveRecord::Schema.define(version: 2020_12_09_173611) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "appearances", "games"
-  add_foreign_key "appearances", "players"
+  create_table "rosters", force: :cascade do |t|
+    t.integer "player_id", null: false
+    t.integer "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_rosters_on_game_id"
+    t.index ["player_id"], name: "index_rosters_on_player_id"
+  end
+
+  add_foreign_key "rosters", "games"
+  add_foreign_key "rosters", "players"
 end

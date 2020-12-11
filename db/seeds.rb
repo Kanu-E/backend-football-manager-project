@@ -9,7 +9,7 @@
 require 'faker'
 
 Player.destroy_all 
-Appearance.destroy_all 
+Roster.destroy_all 
 Game.destroy_all 
 
 Game.create(name: "vs ABC United")

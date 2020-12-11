@@ -1,6 +1,6 @@
-class CreateAppearances < ActiveRecord::Migration[6.0]
+class CreateRosters < ActiveRecord::Migration[6.0]
   def change
-    create_table :appearances do |t|
+    create_table :rosters do |t|
       t.references :player, null: false, foreign_key: true
       t.references :game, null: false, foreign_key: true
 
