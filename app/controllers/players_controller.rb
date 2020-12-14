@@ -1,13 +1,20 @@
 class PlayersController < ApplicationController
     def index
-        players = Player.all
-        render json: players 
+        
+        render json: Player.all.map{|player| PlayerSerializer.new(player)}
     end
 
     def create
-        player = Player.create(player_params)
-        render json: player
+        player = Player.new(player_params)
+            if player.save
+                render json: PlayerSerializer.new(player)
+            end
+    end
 
+    def destroy
+        # byebug
+        player = Player.find(params[:id])
+        player.destroy  
     end
 
     private
