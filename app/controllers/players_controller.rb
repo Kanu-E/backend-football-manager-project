@@ -1,6 +1,5 @@
 class PlayersController < ApplicationController
-    def index
-        
+    def index 
         render json: Player.all.map{|player| PlayerSerializer.new(player)}
     end
 
