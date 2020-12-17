@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
     def index 
-        render json: Game.all.map{|game| GameSerializer.new(game)}
+        render json: GameSerializer.new(Game.all).serializable_hash[:data].map{|game| game[:attributes]}
     end
 
     def create
