@@ -16,17 +16,17 @@ ActiveRecord::Schema.define(version: 2020_12_23_164015) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "player_1", default: "player_1"
-    t.string "player_2", default: "player_2"
-    t.string "player_3", default: "player_3"
-    t.string "player_4", default: "player_4"
-    t.string "player_5", default: "player_5"
-    t.string "player_6", default: "player_6"
-    t.string "player_7", default: "player_7"
-    t.string "player_8", default: "player_8"
-    t.string "player_9", default: "player_9"
-    t.string "player_10", default: "player_10"
-    t.string "player_11", default: "player_11"
+    t.string "player_1", default: "player 1"
+    t.string "player_2", default: "player 2"
+    t.string "player_3", default: "player 3"
+    t.string "player_4", default: "player 4"
+    t.string "player_5", default: "player 5"
+    t.string "player_6", default: "player 6"
+    t.string "player_7", default: "player 7"
+    t.string "player_8", default: "player 8"
+    t.string "player_9", default: "player 9"
+    t.string "player_10", default: "player 10"
+    t.string "player_11", default: "player 11"
   end
 
   create_table "players", force: :cascade do |t|
