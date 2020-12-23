@@ -10,12 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_173611) do
+ActiveRecord::Schema.define(version: 2020_12_23_164015) do
 
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "player_1"
+    t.string "player_2"
+    t.string "player_3"
+    t.string "player_4"
+    t.string "player_5"
+    t.string "player_6"
+    t.string "player_7"
+    t.string "player_8"
+    t.string "player_9"
+    t.string "player_10"
+    t.string "player_11"
   end
 
   create_table "players", force: :cascade do |t|
@@ -28,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_173611) do
   create_table "rosters", force: :cascade do |t|
     t.integer "player_id", null: false
     t.integer "game_id", null: false
+    t.string "position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["game_id"], name: "index_rosters_on_game_id"

@@ -5,9 +5,9 @@ class GamesController < ApplicationController
 
     def create
         game = Game.new(game_params)
-        byebug
+        # byebug
             if game.save
-                render json: GameSerializer.new(game)
+                render json: GameSerializer.new(game).serializable_hash[:data][:attributes]
             end
     end
 
