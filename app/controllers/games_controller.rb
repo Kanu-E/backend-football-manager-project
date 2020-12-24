@@ -11,6 +11,12 @@ class GamesController < ApplicationController
             end
     end
 
+    def update
+        game = Game.find(params[:id])
+        game.update(game_params)
+        # byebug
+    end
+
     def destroy
         # byebug
         game = Game.find(params[:id])
@@ -20,7 +26,7 @@ class GamesController < ApplicationController
     private
 
     def game_params
-        params.require(:game).permit(:name)
+        params.require(:game).permit(:name, :player_1, :player_2, :player_3, :player_4, :player_5, :player_6, :player_7, :player_8, :player_9, :player_10, :player_11)
     end
 
 end
