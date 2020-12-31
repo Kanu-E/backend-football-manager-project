@@ -1,6 +1,6 @@
 class RostersController < ApplicationController
     def update   
-        byebug   
+        # byebug   
         roster = Roster.find_by(position: params[:position], game_id: params[:game_id])
         roster.update(roster_params)
     end
